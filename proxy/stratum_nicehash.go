@@ -110,7 +110,7 @@ func generateRandomString(strlen int) string {
 
 func(cs *Session) getNotificationResponse(s *ProxyServer, id *json.RawMessage) JSONRpcResp {
 	if s.Extranonce == ""{
-		s.Extranonce = generateRandomString(6)
+		s.Extranonce = generateRandomString(4)
 	}
 
 	result := make([]interface{}, 2)
