@@ -1,15 +1,28 @@
 {
-  "threads": 8,
-  "coin": "music",
+  "threads": 1,
+  "coin": "eth",
   "name": "main",
 
+  "api": {
+    "enabled": true,
+    "purgeOnly": false,
+    "purgeInterval": "10m",
+    "listen": "0.0.0.0:8080",
+    "statsCollectInterval": "5s",
+    "hashrateWindow": "30m",
+    "hashrateLargeWindow": "3h",
+    "luckWindow": [64, 128, 256],
+    "payments": 30,
+    "blocks": 50
+  },
+  
   "unlocker": {
     "enabled": true,
     "poolFee": 0,
     "poolFeeAddress": "0x6f633470Cab503FEc82A8c87B4Ae3716E39fBE41",
     "donate": false,
-    "depth": 120,
-    "immatureDepth": 20,
+    "depth": 20,
+    "immatureDepth": 10,
     "keepTxFees": false,
     "interval": "2m",
     "daemon": "http://127.0.0.1:8545",
@@ -19,7 +32,7 @@
   "payouts": {
     "enabled": true,
     "requirePeers": 2,
-    "interval": "2m",
+    "interval": "5m",
     "daemon": "http://127.0.0.1:8545",
     "timeout": "10s",
     "address": "0x4c182245e6f85e8fc5803f687b5ff9a731be4e5a",
@@ -31,7 +44,7 @@
   },
 
   "redis": {
-    "endpoint": "redis:6379",
+    "endpoint": "127.0.0.1:6379",
     "poolSize": 10,
     "database": 0,
     "password": ""
