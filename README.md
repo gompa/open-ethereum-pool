@@ -116,6 +116,7 @@ Clone & compile pool:
     git config --global http.https://gopkg.in.followRedirects true
     git clone https://github.com/GRinvest/open-ethereum-pool.git
     cd open-ethereum-pool
+	git checkout music
     make
 
 
