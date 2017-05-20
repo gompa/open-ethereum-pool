@@ -104,10 +104,14 @@ Dependencies:
 	export PATH=$GOROOT/bin:$PATH
 	export GOPATH=$HOME/go
 
+Clone & compile gmc:
 
-install  [go-ethereum](https://github.com/ethereum/go-ethereum/wiki/Installation-Instructions-for-Ubuntu).
+	git clone https://github.com/Musicoin/go-musicoin.git
+	cd go-musicoin
+	make gmc
+	cp /build/bin/gmc /usr/bin/
 
-Clone & compile:
+Clone & compile pool:
 
     git config --global http.https://gopkg.in.followRedirects true
     git clone https://github.com/GRinvest/open-ethereum-pool.git
