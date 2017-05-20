@@ -12,8 +12,8 @@ import (
 
 	"github.com/gorilla/mux"
 
-	"github.com/bulktrade/open-ethereum-pool/storage"
-	"github.com/bulktrade/open-ethereum-pool/util"
+	"github.com/GRinvest/open-ethereum-pool/storage"
+	"github.com/GRinvest/open-ethereum-pool/util"
 )
 
 type ApiConfig struct {

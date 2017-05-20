@@ -1,10 +1,10 @@
 package proxy
 
 import (
-	"github.com/bulktrade/open-ethereum-pool/api"
-	"github.com/bulktrade/open-ethereum-pool/payouts"
-	"github.com/bulktrade/open-ethereum-pool/policy"
-	"github.com/bulktrade/open-ethereum-pool/storage"
+	"github.com/GRinvest/open-ethereum-pool/api"
+	"github.com/GRinvest/open-ethereum-pool/payouts"
+	"github.com/GRinvest/open-ethereum-pool/policy"
+	"github.com/GRinvest/open-ethereum-pool/storage"
 )
 
 type Config struct {

@@ -74,7 +74,7 @@ RUN curl https://get.parity.io -kL|bash
 WORKDIR /opt
 
 RUN git config --global http.https://gopkg.in.followRedirects true
-RUN git clone --branch release/music --single-branch https://github.com/bulktrade/open-ethereum-pool.git
+RUN git clone --branch release/music --single-branch https://github.com/GRinvest/open-ethereum-pool.git
 
 WORKDIR /opt/open-ethereum-pool
 
