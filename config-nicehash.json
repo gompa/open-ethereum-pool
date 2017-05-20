@@ -1,6 +1,6 @@
 {
   "threads": 2,
-  "coin": "eth",
+  "coin": "music",
   "name": "main",
 
   "proxy": {
@@ -54,7 +54,7 @@
   },
 
   "api": {
-    "enabled": true,
+    "enabled": false,
     "purgeOnly": false,
     "purgeInterval": "10m",
     "listen": "0.0.0.0:8080",
@@ -70,12 +70,12 @@
   "upstream": [
     {
       "name": "main",
-      "url": "http://127.0.0.1:8545",
+      "url": "http://127.0.0.1:8101",
       "timeout": "10s"
     },
     {
       "name": "backup",
-      "url": "http://127.0.0.1:8545",
+      "url": "http://127.0.0.1:8102",
       "timeout": "10s"
     }
   ],

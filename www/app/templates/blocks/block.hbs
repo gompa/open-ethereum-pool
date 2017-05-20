@@ -3,16 +3,16 @@
     {{#if block.uncle}}
       {{format-number block.height}}
     {{else}}
-      <a href="https://etherscan.io/block/{{block.height}}" rel="nofollow" target="_blank">{{format-number block.height}}</a>
+      <a href="http://orbiter.musicoin.org/block/{{block.height}}" rel="nofollow" target="_blank">{{format-number block.height}}</a>
     {{/if}}
   </td>
   <td>
     {{#if block.uncle}}
-      <a href="https://etherscan.io/block/{{block.hash}}" class="hash" rel="nofollow" target="_blank">{{format-tx block.hash}}</a>
+      <a href="http://orbiter.musicoin.org/block/{{block.height}}" class="hash" rel="nofollow" target="_blank">{{format-tx block.hash}}</a>
     {{else if block.orphan}}
       <span class="label label-danger">Orphan</span>
     {{else}}
-      <a href="https://etherscan.io/block/{{block.hash}}" class="hash" rel="nofollow" target="_blank">{{format-tx block.hash}}</a>
+      <a href="http://orbiter.musicoin.org/block/{{block.height}}" class="hash" rel="nofollow" target="_blank">{{format-tx block.hash}}</a>
     {{/if}}
   </td>
   <td>{{format-date-locale block.timestamp}}</td>

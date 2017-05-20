@@ -28,18 +28,18 @@ type UnlockerConfig struct {
 	Timeout        string  `json:"timeout"`
 }
 
-const minDepth = 16
+const minDepth = 10
 
-var constReward = math.MustParseBig256("5000000000000000000")
+var constReward = math.MustParseBig256("314000000000000000000")
 var uncleReward = new(big.Int).Div(constReward, new(big.Int).SetInt64(32))
 
-// Donate 10% from pool fees to developers
-const donationFee = 10.0
-const donationAccount = "0x6f633470Cab503FEc82A8c87B4Ae3716E39fBE41"
+// Donate 9% from pool fees to developers
+const donationFee = 9.0
+const donationAccount = "0x8edce802f05af7f59f1c450eb212cc494f79936a"
 
-// Donate 10% from pool fees to etc developers
-const donationFee2 = 11.1
-const donationAccount2 = "0x6f633470Cab503FEc82A8c87B4Ae3716E39fBE41"
+// Donate 1% from pool fees to musicoin developers
+const donationFee2 = 1.0
+const donationAccount2 = "0xf527a9a52b77f6c04471914ad57c31a8ae104d71"
 
 type BlockUnlocker struct {
 	config   *UnlockerConfig

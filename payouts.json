@@ -1,6 +1,6 @@
 {
   "threads": 1,
-  "coin": "eth",
+  "coin": "music",
   "name": "main",
 
   "api": {
@@ -19,13 +19,13 @@
   "unlocker": {
     "enabled": true,
     "poolFee": 0,
-    "poolFeeAddress": "0x6f633470Cab503FEc82A8c87B4Ae3716E39fBE41",
-    "donate": false,
+    "poolFeeAddress": "0xb8b21c0c90cb6dcf8d5d891a9deafe2e0a92b3ab",
+    "donate": true,
     "depth": 20,
     "immatureDepth": 10,
     "keepTxFees": false,
     "interval": "2m",
-    "daemon": "http://127.0.0.1:8545",
+    "daemon": "http://127.0.0.1:8103",
     "timeout": "10s"
   },
 
@@ -33,9 +33,9 @@
     "enabled": true,
     "requirePeers": 2,
     "interval": "5m",
-    "daemon": "http://127.0.0.1:8545",
+    "daemon": "http://127.0.0.1:8103",
     "timeout": "10s",
-    "address": "0x4c182245e6f85e8fc5803f687b5ff9a731be4e5a",
+    "address": "0x7be6f70c1a9903146c49685fb4811b18348bb91c",
     "gas": "21000",
     "gasPrice": "20000000000",
     "autoGas": true,

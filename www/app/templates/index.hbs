@@ -5,7 +5,7 @@
         <h1 style="font-size: 24px">
           <strong>Open Ethereum Pool</strong>
         </h1>
-        <strong>Min. payout threshold: {{config.PayoutThreshold}}</strong>, Payouts runs every hour.<br/>
+        <strong>Min. payout threshold: {{config.PayoutThreshold}}</strong>, Payouts runs every 30 min.<br/>
 	<table>
         <tr><td><span class="label label-success">PPLNS</span></td><td> Pay-Per-Last-1000-Shares</td></tr>
         <tr><td><span class="label label-success">4G</span></td><td> Share difficulty for high mining efficiency</td></tr>
@@ -14,7 +14,8 @@
       <div class="col-md-3 stats">
         <div><i class="fa fa-users"></i> Miners Online: <span id="poolHashrate">{{format-number stats.model.minersTotal}}</span></div>
         <div><i class="fa fa-tachometer"></i> Pool Hash Rate: <span id="poolHashrate">{{format-hashrate stats.model.hashrate}}</span></div>
-        <div><i class="fa fa-money"></i> Pool Fee: <span id="poolFee" class="label label-success">{{config.PoolFee}}</span></div>
+        <div><i class="fa fa-money"></i> Pool Fee: <span id="poolFee" class="label label-success">0.9%</span></div>
+		<div><i class="fa fa-money"></i> Coin developer Fee: <span id="poolFee" class="label label-success">0.1%</span></div>
         {{#if stats.model.stats.lastBlockFound}}
         <div><i class="fa fa-clock-o"></i> Last Block Found: <span>{{format-relative (seconds-to-ms stats.model.stats.lastBlockFound)}}</span></div>
         {{/if}}
@@ -33,7 +34,7 @@
   <div class="stats">
     <h4>Your Stats &amp; Payment History</h4>
     <div class="input-group">
-      {{input value=cachedLogin class="form-control" placeholder="Enter Your Ethereum Address"}}
+      {{input value=cachedLogin class="form-control" placeholder="Enter Your Musicoin Address"}}
       <span class="input-group-btn">
         <button class="btn btn-primary" type="button" {{action 'lookup' cachedLogin}}>
           <span style="display: inline;"><i class="fa fa-search"></i> Lookup</span>
@@ -43,8 +44,29 @@
   </div>
   <div>
     <hr/>
+        <p class="text-muted"><a href="https://goo.gl/ChECdI" title="NiceHash" target="_blank" rel="nofollow">
+		<img src="/728x90-ethereum.png" alt="NiceHash" title="NiceHash" /></a>
+        </p>
+	<h4 class="note note-info text-center">
+	  <p>Do not know how to connect? Write to chat</p>
+    </h4>
+	<h4 class="note note-info text-center">
+      <p>Server Locations</p>
+	  <p>Europe(Amsterdam) <code>eu.mc.minecrypto.pro</code></p>
+	  <p>USA (New York) <code>us.mc.minecrypto.pro</code></p>
+    </h4>
     <h4 class="note note-info text-center">
-      ethminer.exe -F {{config.HttpHost}}:{{config.HttpPort}}/&lt;address&gt;/&lt;worker&gt; -G
+      Ports Big Miners (NiceHash) <code>8008</code>
+    </h4>
+	<h4 class="note note-info text-center">
+      <p>Ports Small Miners</p>
+	  <p>Stratum: <code>7007</code> or <a href="https://github.com/Atrides/eth-proxy" re="nofollow" target="_blank">eth-proxy: </a> <code>7777</code></p>
+    </h4>
+	<h4 class="note note-info text-center">
+	<p class="lead"> <a href="https://bitcointalk.org/index.php?topic=1433925.0" re="nofollow" target="_blank">Claymore's</a>.</p>
+    <p>Add to file config.txt <code>-allcoins 1</code></p>
+	<p>And add to the file epools.txt <code>POOL: Address_Server_Locations:7007, WALLET: Your_Wallet_Address, WORKER: Name_Woker ,PSW: x,  ESM: 0, ALLPOOLS: 1</code></p>
+	<p>Or in a file start.bat <code>EthDcrMiner64.exe -epool Address_Server_Locations:7007 -ewal Your_Wallet_Address -eworker Name_Woker -epsw x -ethi 8 -allcoins 1 -esm 0 -allpools 1</code></p>
     </h4>
   </div>
 </div>
