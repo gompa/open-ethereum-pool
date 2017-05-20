@@ -34,28 +34,68 @@ Dependencies:
 
 **I highly recommend to use Ubuntu 16.04 LTS.**
 
-First install  [go-ethereum](https://github.com/ethereum/go-ethereum/wiki/Installation-Instructions-for-Ubuntu).
+apt-get --assume-yes  update
+apt-get --assume-yes  upgrade
+
+dd if=/dev/zero of=/swap bs=1024 count=4096K
+
+mkswap /swap
+
+swapon /swap
+
+echo "/swap swap swap defaults 0 0" | tee -a /etc/fstab
+
+
+dpkg-reconfigure tzdata
+
+/sbin/hwclock --systohc
+/etc/init.d/cron stop
+/etc/init.d/cron start
+
+apt-get --assume-yes install git build-essential libgmp3-dev golang screen mc htop npm nano
+
+apt-get --assume-yes install nginx redis-server
+
+npm install n -g
+n stable
+
+echo 'vm.overcommit_memory=1' >> /etc/sysctl.conf
+echo 'root soft nofile 65000' >> /etc/security/limits.conf
+
+echo 'root hard nofile 65000' >> /etc/security/limits.conf
+
+echo 'session required pam_limits.so' >> /etc/pam.d/common-session
+
+
+reboot
+
+wget https://storage.googleapis.com/golang/go1.6.linux-amd64.tar.gz
+tar -C /usr/local -xzf go1.6.linux-amd64.tar.gz
+export GOROOT=/usr/local/go
+export PATH=$GOROOT/bin:$PATH
+export GOPATH=$HOME/go
+
+
+install  [go-ethereum](https://github.com/ethereum/go-ethereum/wiki/Installation-Instructions-for-Ubuntu).
 
 Clone & compile:
 
     git config --global http.https://gopkg.in.followRedirects true
-    git clone https://github.com/sammy007/open-ethereum-pool.git
+    git clone https://github.com/GRinvest/open-ethereum-pool.git
     cd open-ethereum-pool
     make
 
-Install redis-server.
 
 ### Running Pool
 
-    ./build/bin/open-ethereum-pool config.json
+    screen -S pool ./build/bin/open-ethereum-pool config.json
+	screen -S nice ./build/bin/open-ethereum-pool config-nicehash.json
+	screen -S payouts ./build/bin/open-ethereum-pool payouts.json
+	
 
 You can use Ubuntu upstart - check for sample config in <code>upstart.conf</code>.
 
 ### Building Frontend
-
-Install nodejs. I suggest using LTS version >= 4.x from https://github.com/nodesource/distributions or from your Linux distribution or simply install nodejs on Ubuntu Xenial 16.04.
-
-The frontend is a single-page Ember.js application that polls the pool API to render miner stats.
 
     cd www
 
