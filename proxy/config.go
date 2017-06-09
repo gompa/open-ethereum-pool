@@ -1,10 +1,10 @@
 package proxy
 
 import (
-	"github.com/GRinvest/open-ethereum-pool/api"
-	"github.com/GRinvest/open-ethereum-pool/payouts"
-	"github.com/GRinvest/open-ethereum-pool/policy"
-	"github.com/GRinvest/open-ethereum-pool/storage"
+	"github.com/gompa/open-ethereum-pool/api"
+	"github.com/gompa/open-ethereum-pool/payouts"
+	"github.com/gompa/open-ethereum-pool/policy"
+	"github.com/gompa/open-ethereum-pool/storage"
 )
 
 type Config struct {
