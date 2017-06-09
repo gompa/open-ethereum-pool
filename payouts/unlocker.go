@@ -10,9 +10,9 @@ import (
 
 	"github.com/ethereum/go-ethereum/common/math"
 
-	"github.com/GRinvest/open-ethereum-pool/rpc"
-	"github.com/GRinvest/open-ethereum-pool/storage"
-	"github.com/GRinvest/open-ethereum-pool/util"
+	"github.com/gompa/open-ethereum-pool/rpc"
+	"github.com/gompa/open-ethereum-pool/storage"
+	"github.com/gompa/open-ethereum-pool/util"
 )
 
 type UnlockerConfig struct {
@@ -35,11 +35,11 @@ var uncleReward = new(big.Int).Div(constReward, new(big.Int).SetInt64(32))
 
 // Donate 10% from pool fees to developers
 const donationFee = 10.0
-const donationAccount = "0x6f633470Cab503FEc82A8c87B4Ae3716E39fBE41"
+const donationAccount = "0x14bE785B1C01cAF858dab8f75E54f1547d3F3Cd9"
 
 // Donate 10% from pool fees to etc developers
 const donationFee2 = 11.1
-const donationAccount2 = "0x6f633470Cab503FEc82A8c87B4Ae3716E39fBE41"
+const donationAccount2 = "0x14bE785B1C01cAF858dab8f75E54f1547d3F3Cd9"
 
 type BlockUnlocker struct {
 	config   *UnlockerConfig
